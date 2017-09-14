@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	script.
+
+	//h1= title
+	//p Welcome to #{title}
+	p original word: #{randomWord}
+
+	//button(id="generate") Generate
+	form(name="generate", method="post")
+		input(type="submit", value="Generate")
