@@ -1,8 +1,20 @@
 <%- include('layout'); %>
 <body>
 
-<p>Generated words: <b id="randomWord"></b></p>
-
+<p>Generated word(s): <div id="randomWords"></div></p>
+<p>
+    <input type="checkbox" id="type" value="" checked>All<br>
+    <input type="checkbox" id="type_n" value="n" disabled>Noun<br>
+    <input type="checkbox" id="type_a" value="a" disabled>Adjective<br>
+    <input type="checkbox" id="type_t" value="t" disabled>Verb(Transitive)<br>
+    <input type="checkbox" id="type_i" value="i" disabled>Verb(Intransitive)<br>
+    <input type="checkbox" id="type_e" value="e" disabled>Adverb<br>
+    <input type="checkbox" id="type_z" value="z" disabled>Interjection<br>
+    <input type="checkbox" id="type_s" value="s" disabled>Preposition<br>
+</p>
+<p>
+    <input type="number" id="quantity" value="1" min="1" max="1000">
+</p>
 <button id="generate">Generate</button>
 
 </body>

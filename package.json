@@ -1,6 +1,6 @@
 {
 	"name": "random-georgian-words",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"private": true,
 	"scripts": {
 		"start": "node ./bin/www"
@@ -13,6 +13,7 @@
 		"express": "~4.15.2",
 		"morgan": "~1.8.1",
 		"request": "^2.81.0",
-		"serve-favicon": "^2.4.4"
+		"serve-favicon": "^2.4.4",
+		"redis": "^2.8.0"
 	}
 }
