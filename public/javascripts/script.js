@@ -1,24 +1,26 @@
 $(document).ready(function () {
 
-	var types = ['n', 'a', 't', 'i', 'e', 'z', 's'];
-
+	['txt', 'xlsx'].forEach(function(type){
+		$('#' + type).click(function () {
+			exportAs(type);
+		});
+	});
 
 	$("#generate").click(function () {
+		$("#exports").show();
+
 		var params = {
-			quantity: $("#quantity").val(),
-			type: $("#type").is(':checked')
+			quantity: $("#quantity").val()
 		};
-		types.forEach(function(t){
-			params['type_' + t] = $('#type_' + t).is(':checked');
-		});
 
 		$.ajax({
 			type: 'POST',
-			url: '/',
+			url: '/generate',
 			contentType: 'application/json',
 			dataType: 'json',
 			data: JSON.stringify(params),
 			success: function (res) {
+				console.log(res);
 				$("#randomWords").text(res.randomWords);
 			},
 			error: function (res) {
@@ -29,11 +31,25 @@ $(document).ready(function () {
 		});
 	});
 
-	$("#type").click(function () {
-		var disable = $("#type").is(':checked');
-		types.forEach(function(t){
-			$('#type_' + t).attr('disabled', disable);
-		});
-	});
-
 });
+
+function exportAs(type) {
+	$.ajax({
+		type: 'POST',
+		url: '/export',
+		contentType: 'application/json',
+		dataType: 'json',
+		data: JSON.stringify({
+			type: type
+		}),
+		success: function (res) {
+			//TODO
+			console.log('success');
+			console.log(res);
+		},
+		error: function (res) {
+			console.log('error');
+			console.log(res);
+		}
+	});
+}
