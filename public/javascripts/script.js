@@ -1,9 +1,10 @@
 $(document).ready(function () {
+	$('#xlsx').click(function(){
+		exportExcel();
+	});
 
-	['txt', 'xlsx'].forEach(function(type){
-		$('#' + type).click(function () {
-			exportAs(type);
-		});
+	$('#txt').click(function(){
+		exportTxt();
 	});
 
 	$("#generate").click(function () {
@@ -33,23 +34,10 @@ $(document).ready(function () {
 
 });
 
-function exportAs(type) {
-	$.ajax({
-		type: 'POST',
-		url: '/export',
-		contentType: 'application/json',
-		dataType: 'json',
-		data: JSON.stringify({
-			type: type
-		}),
-		success: function (res) {
-			//TODO
-			console.log('success');
-			console.log(res);
-		},
-		error: function (res) {
-			console.log('error');
-			console.log(res);
-		}
-	});
+function exportExcel() {
+	window.location.href='/exportExcel';
+}
+
+function exportTxt() {
+	window.location.href='/exportTxt';
 }
