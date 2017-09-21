@@ -1,9 +1,10 @@
 $(document).ready(function () {
-	$('#xlsx').click(function(){
+
+	$('#xlsx').click(function () {
 		exportExcel();
 	});
 
-	$('#txt').click(function(){
+	$('#txt').click(function () {
 		exportTxt();
 	});
 
@@ -35,9 +36,9 @@ $(document).ready(function () {
 });
 
 function exportExcel() {
-	window.location.href='/exportExcel';
+	window.location.href = '/exportExcel';
 }
 
 function exportTxt() {
-	window.location.href='/exportTxt';
+	window.location.href = '/exportTxt';
 }
