@@ -1,15 +1,7 @@
 $(document).ready(function () {
 
-	$('#xlsx').click(function () {
-		exportExcel();
-	});
-
-	$('#txt').click(function () {
-		exportTxt();
-	});
-
 	$("#generate").click(function () {
-		$("#exports").show();
+		$("#exports").slideDown();
 
 		$.ajax({
 			type: 'GET',
@@ -29,11 +21,3 @@ $(document).ready(function () {
 	});
 
 });
-
-function exportExcel() {
-	window.location.href = '/exportExcel';
-}
-
-function exportTxt() {
-	window.location.href = '/exportTxt';
-}

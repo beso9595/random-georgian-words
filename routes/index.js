@@ -4,7 +4,7 @@ var generate = require('../lib/generate');
 var exportFile = require('../lib/export');
 
 var words = [];
-var fileTypes = ['.txt', '.xlsx'];
+// var fileTypes = ['.txt', '.xlsx'];
 
 /* GET home page. */
 router.get('/', function (req, res) {
@@ -22,7 +22,7 @@ router.get('/generate', function (req, res) {
 });
 
 /* GET export random words. */
-router.get('/exportAs/:id', function (req, res) {
+router.get('/export/:id', function (req, res) {
 	var id = parseInt(req.params.id);
 	switch (id) {
 		case 1:
