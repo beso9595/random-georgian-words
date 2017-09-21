@@ -11,16 +11,11 @@ $(document).ready(function () {
 	$("#generate").click(function () {
 		$("#exports").show();
 
-		var params = {
-			quantity: $("#quantity").val()
-		};
-
 		$.ajax({
-			type: 'POST',
-			url: '/generate',
+			type: 'GET',
+			url: '/generate?quantity=' + $("#quantity").val(),
 			contentType: 'application/json',
 			dataType: 'json',
-			data: JSON.stringify(params),
 			success: function (res) {
 				console.log(res);
 				$("#randomWords").text(res.randomWords);

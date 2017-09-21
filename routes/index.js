@@ -12,9 +12,8 @@ router.get('/', function (req, res) {
 });
 
 /* POST generate random word(s). */
-router.post('/generate', function (req, res) {
-	var params = req.body;
-	generate.getWords(params['quantity'], function (randomWords) {
+router.get('/generate', function (req, res) {
+	generate.getWords(req.query.quantity, function (randomWords) {
 		words = randomWords;
 		res.send({
 			randomWords: randomWords
