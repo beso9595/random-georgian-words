@@ -4,6 +4,7 @@ var generate = require('../lib/generate');
 var exportFile = require('../lib/export');
 
 var words = [];
+var fileTypes = ['.txt', '.xlsx'];
 
 /* GET home page. */
 router.get('/', function (req, res) {
@@ -22,18 +23,16 @@ router.post('/generate', function (req, res) {
 });
 
 /* GET export random words. */
-router.get('/exportExcel', function (req, res) {
-	var result = exportFile.exportExcel(words);
-	res.setHeader('Content-Type', 'application/vnd.openxmlformats');
-	res.setHeader("Content-Disposition", "attachment; filename=" + "Random-Georgian-Words.xlsx");
-	res.end(result, 'binary');
-});
-
-router.get('/exportTxt', function (req, res) {
-	var text = exportFile.exportTxt(words);
-	res.setHeader('Content-type', "application/octet-stream");
-	res.setHeader('Content-disposition', 'attachment; filename=file.txt');
-	res.send(text);
+router.get('/exportAs/:id', function (req, res) {
+	var id = parseInt(req.params.id);
+	switch (id) {
+		case 1:
+			var text = exportFile.exportTxt(res, words);
+			break;
+		case 2:
+			var result = exportFile.exportExcel(res, words);
+			break;
+	}
 });
 
 module.exports = router;
