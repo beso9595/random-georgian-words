@@ -40,3 +40,17 @@ body, html {
     text-align: center;
     margin-top: 10px;
 }
+
+.fixedFooter {
+    position: fixed;
+    height:50%;
+    width:100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index:10;
+}
+
+p{
+    color:#ffffff;
+}
