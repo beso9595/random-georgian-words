@@ -16,7 +16,7 @@ $(document).ready(function () {
 				var randomWords = res.randomWords;
 				var all = "";
 				randomWords.forEach(function(w, i){
-					all += '<kbd>' + w + '</kbd>' + ((randomWords.length !== (i + 1)) ? ' ' : '');
+					all +=  w + ((randomWords.length !== (i + 1)) ? ' ' : '');
 				});
 				container.append(all);
 			},

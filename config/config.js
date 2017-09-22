@@ -1,9 +1,9 @@
 module.exports = {
-	dbHost: '',
-	dbPort: -1,
-	dbPassword: '',
-	dbPre: 'rgw_',
+    dbHost: 'redis-19950.c11.us-east-1-3.ec2.cloud.redislabs.com',
+    dbPort: 19950,
+    dbPassword: 'nqnu6eg8ymd4ev910x2kyuzjbr1w32b1djoswog1',
+    dbPre: 'rgw_',
 
-	maxWords: 50,
-	minWords: 1
+    maxWords: 50,
+    minWords: 1
 };
