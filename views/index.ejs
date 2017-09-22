@@ -1,19 +1,22 @@
 <%- include('layout'); %>
 <body>
 
-<div>
-    <p>Generated word(s):
-    <div id="randomWords" class="well well-md"></div>
-    </p>
-</div>
+<button id="generate" class="btn  btn-lg">Generate</button>
+
 <p>
     <input type="number" id="quantity" value="30" min="1" max="4000">
 </p>
+
 <div id="exports" hidden>
     <a href="/export/1" class="btn"><span class="glyphicon glyphicon-file"></span> File(txt)</a>
     <a id="copy" data-clipboard-target="#randomWords" class="btn"><span class="glyphicon glyphicon-copy"></span> Copy</a>
     <a href="/export/2" class="btn"><span class="glyphicon glyphicon-th-list"></span> Excel(xlsx)</a>
 </div>
-<br>
-<button id="generate" class="btn  btn-lg">Generate</button>
+
+<div>
+    <p>Generated word(s):
+    <div id="randomWords" class="well"></div>
+    </p>
+</div>
+
 </body>

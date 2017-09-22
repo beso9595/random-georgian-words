@@ -25,6 +25,7 @@ a {
     background-color: #274B50;
     border-color: #274B50;
     width: 200px;
+    margin-bottom: 20px;
 }
 
 .btn:hover, .btn:active, .btn:focus {
