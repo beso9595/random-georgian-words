@@ -18,7 +18,7 @@ body, html {
 .mainContent {
     position: relative;
     float: left;
-    top: 50%;
+    top: 30%;
     left: 50%;
     height: 50%;
     width: 100%;
@@ -30,22 +30,55 @@ body, html {
     margin-bottom: 10px;
 }
 
-#randomWords {
-    color: #ffffff;
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
 #exports {
     text-align: center;
 }
 
+.scrollbar
+{
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    float: left;
+    height: 70%;
+    width: 100%;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+}
+
+.force-overflow
+{
+    min-height: 200px;
+    max-height:700px;
+}
+
 #footer p {
     position: fixed;
-    text-align: center;
     bottom: 0;
     left: 0;
     right: 0;
     color: #ffffff;
+}
+
+#words::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+#words::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+#words::-webkit-scrollbar-thumb
+{
+    background-color: #000000;
+}
+
+.wordsTable{
+    border-spacing:100px;
 }

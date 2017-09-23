@@ -4,6 +4,6 @@ module.exports = {
     dbPassword: 'nqnu6eg8ymd4ev910x2kyuzjbr1w32b1djoswog1',
     dbPre: 'rgw_',
 
-    maxWords: 50,
+    maxWords: 1000,
     minWords: 1
 };
