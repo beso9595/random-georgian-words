@@ -15,13 +15,13 @@ body, html {
     background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.mainContent{
+.mainContent {
     position: relative;
     float: left;
     top: 50%;
     left: 50%;
-    height:50%;
-    width:100%;
+    height: 50%;
+    width: 100%;
     transform: translate(-50%, -50%);
 }
 
@@ -34,23 +34,18 @@ body, html {
     color: #ffffff;
     font-size: 20px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 #exports {
     text-align: center;
-    margin-top: 10px;
 }
 
-.fixedFooter {
+#footer p {
     position: fixed;
-    height:50%;
-    width:100%;
+    text-align: center;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index:10;
-}
-
-p{
-    color:#ffffff;
+    color: #ffffff;
 }
