@@ -1,35 +1,23 @@
 <%- include('layout'); %>
 <body>
-<div class="mainContent">
-    <div class="col-md-12">
-        <div class="col-md-offset-5 col-md-1">
-            <input type="number" class="form-control" id="quantity" value="30" min="1" max="4000">
-        </div>
-        <button id="generate" class="btn btn-success col-md-1">Generate</button>
-    </div>
 
-    <div class="col-md-12">
-        <div class="main-content col-md-offset-2 col-md-8">
-            <h3 id="header" class="text-center">Generated word(s):</h3>
-            <div class="scrollbar" id="words" hidden>
-                <div class="force-overflow" id="randomWords"></div>
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
+<button id="generate" class="btn btn-lg">Generate</button>
 
-    <div id="exports" hidden>
-        <a href="/export/1" class="btn btn-default"><span class="glyphicon glyphicon-file"></span> File(txt)</a>
-        <a id="copy" data-clipboard-target="#randomWords" class="btn btn-default"><span
-                    class="glyphicon glyphicon-copy"></span> Copy</a>
-        <a href="/export/2" class="btn btn-default"><span class="glyphicon glyphicon-th-list"></span> Excel(xlsx)</a>
-    </div>
+<p>
+    <input type="number" id="quantity" value="30" min="1" max="4000">
+</p>
+
+<div id="exports" hidden>
+    <a href="/export/1" class="btn"><span class="glyphicon glyphicon-file"></span> File(txt)</a>
+    <a id="copy" data-clipboard-target="#randomWords" class="btn"><span class="glyphicon glyphicon-copy"></span> Copy</a>
+    <a href="/export/2" class="btn"><span class="glyphicon glyphicon-th-list"></span> Excel(xlsx)</a>
 </div>
 
-<%- include('footer'); %>
+<div>
+    <p>Generated word(s):
+    <div id="randomWords" class="well"></div>
+    </p>
+</div>
 
-<script src="javascripts/lib/jquery-3.2.1.min.js"></script>
-<script src="javascripts/lib/bootstrap.min.js"></script>
-<script src="javascripts/lib/clipboard.min.js"></script>
-<script src="javascripts/script.js"></script>
+<!--<%- include('footer'); %>-->
 </body>
