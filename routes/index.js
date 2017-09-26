@@ -2,18 +2,23 @@ var express = require('express'),
 	router = express.Router();
 var generate = require('../lib/generate');
 var exportFile = require('../lib/export');
+var config = require('../config/config');
 
 var words = [];
-// var fileTypes = ['.txt', '.xlsx'];
 
 /* GET home page. */
 router.get('/', function (req, res) {
-	res.render('index');
+	res.render('index', {
+		min: config.minWords || 1,
+		max: config.maxWords || 50
+	});
 });
 
-/* POST generate random word(s). */
+/* GET generate random word(s). */
 router.get('/generate', function (req, res) {
-	generate.getWords(req.query.quantity, function (randomWords) {
+	var q = req.query.quantity,
+		quantity = q ? ((q < config.minWords || q > config.maxWords) ? config.minWords : parseInt(q)) : config.minWords;
+	generate.getWords(quantity, function (randomWords) {
 		words = randomWords;
 		res.send({
 			randomWords: randomWords

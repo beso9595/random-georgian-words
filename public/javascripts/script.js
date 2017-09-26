@@ -2,15 +2,16 @@ $(document).ready(function () {
 
 	$('#generate').click(function () {
 		new Clipboard('#copy');
+		var container = $('#randomWords');
+		container.addClass('loading-mask');
 
 		$.ajax({
 			type: 'GET',
-			url: '/generate?quantity=' + $("#quantity").val(),
+			url: '/generate?quantity=' + $('#quantity').val(),
 			contentType: 'application/json',
 			dataType: 'json',
 			success: function (res) {
 				console.log(res);
-				var container = $("#randomWords");
 				container.text('');
 				var randomWords = res.randomWords;
 				var all = "";
@@ -19,11 +20,13 @@ $(document).ready(function () {
 				});
 				container.append(all);
 				$('#exports').slideDown();
+				container.removeClass('loading-mask');
 			},
 			error: function (res) {
 				console.log('error');
 				console.log(res);
 				$("#randomWords").text('');
+				container.removeClass('loading-mask');
 			}
 		});
 	});
