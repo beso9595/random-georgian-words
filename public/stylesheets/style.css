@@ -45,11 +45,11 @@ kbd:hover {
 }
 
 #footer p {
-    position: fixed;
     text-align: center;
     bottom: 0;
     left: 0;
     right: 0;
+    font-size: 15px;
 }
 
 .well {
@@ -92,4 +92,8 @@ kbd:hover {
     left: calc(50% - 12px);
     animation: 2s linear 0s normal none infinite running spin;
     filter: drop-shadow(0 0 2 rgba(0, 0, 0, 0.33));
+}
+
+#quantity {
+    width: 100px;
 }
